@@ -12,13 +12,20 @@ app.withdraw()
 
 mixer.init()
 
-
+is_window_open = False
 
 def close_warning(popup_window: CTkToplevel):
+    global is_window_open
     popup_window.destroy()
+    is_window_open = False
     app.quit()
 
 def warn_user():
+    global is_window_open
+
+    if is_window_open:
+        return
+    is_window_open = True
     try:
         popup_sound = mixer.Sound(get_random_sound_path())
     except FileNotFoundError:
