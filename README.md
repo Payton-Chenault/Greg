@@ -2,7 +2,7 @@
 Greg is a playful way to remind you you're being to loud on your computer...
 
 # Installation
-Check the releases and download the zip folder, inside there should be a dist folder containing the .exe and its assets, if wanted, you can modify the assets in there to change how greg behaves.
+Check the releases and download the exe, running it will start greg in the background, so to ensure its running, check your system tray
 
 # Use/Interaction
 Greg will hide in your system tray under the name 'Too Loud Monitor', right clicking can quit the application, you can also safely end the task in task manager if neccessary.
