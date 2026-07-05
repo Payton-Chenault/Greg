@@ -6,6 +6,7 @@ from customtkinter import CTkToplevel
 from pygame import mixer
 
 from RandomAsset import get_random_sound_path, get_random_picture_path
+from ResourceUtil import resource_path
 
 app = ctk.CTk()
 app.withdraw()
@@ -27,7 +28,7 @@ def warn_user():
         return
     is_window_open = True
     try:
-        popup_sound = mixer.Sound(get_random_sound_path())
+        popup_sound = mixer.Sound(resource_path(get_random_sound_path()))
     except FileNotFoundError:
         print("Cant find sound")
         popup_sound = None
@@ -41,7 +42,7 @@ def warn_user():
         popup_sound.play()
 
     try:
-        img_data = Image.open(get_random_picture_path())
+        img_data = Image.open(resource_path(get_random_picture_path()))
         image = ctk.CTkImage(img_data, size=(400,400))
         image_label = ctk.CTkLabel(master=popup, image=image, text="")
         image_label.pack()

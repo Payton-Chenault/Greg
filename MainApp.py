@@ -8,6 +8,7 @@ from PIL import Image
 from pystray import MenuItem as item
 from MicDetection import current_volume_db
 from RandomAsset import get_random_picture_path
+from ResourceUtil import resource_path
 
 is_running = True
 def quit_app(icon):
@@ -16,7 +17,7 @@ def quit_app(icon):
     icon.stop()
 
 def setup():
-    image = Image.open(get_random_picture_path()).resize((64, 64))
+    image = Image.open(resource_path(get_random_picture_path())).resize((64, 64))
     menu = pystray.Menu(item('Quit', quit_app))
 
     icon = pystray.Icon("VolumeMonitor", image, "Too Loud Monitor", menu)
