@@ -52,5 +52,3 @@ def audio_listener_thread():
             mic.stop_stream()
         mic.close()
         p.terminate()
-
-if __name__ == "__main__": main()
